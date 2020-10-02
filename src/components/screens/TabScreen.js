@@ -10,9 +10,15 @@ import {
   Title,
   Tab
 } from 'native-base'
+import TabContentContainer from '../container/TabContentContainer'
 
 const TabScreen = () => {
-  const sources = ['BBC', 'Bloomberg', 'TechCrunch']
+  const sources = [
+    { name: 'BBC', id: 'bbc-news' },
+    { name: 'Bloomberg', id: 'bloomberg' },
+    { name: 'TechCrunch', id: 'techcrunch' }
+  ]
+
   return (
     <Container>
       <Header style={styles.header} hasTabs>
@@ -26,12 +32,14 @@ const TabScreen = () => {
         {sources.map((source, index) => (
           <Tab
             key={index}
-            heading={source}
+            heading={source.name}
             tabStyle={styles.tabStyle}
             activeTabStyle={styles.activeTabStyle}
             textStyle={styles.tabText}
             activeTextStyle={styles.tabText}
-          ></Tab>
+          >
+            <TabContentContainer source={source.id} />
+          </Tab>
         ))}
       </Tabs>
     </Container>

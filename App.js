@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar'
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
-import TabScreen from './components/screens/TabScreen'
+import TabScreen from './src/components/screens/TabScreen'
 
 export default function App() {
   return (
